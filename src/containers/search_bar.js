@@ -42,6 +42,7 @@ class SearchBar extends Component {
 		event.preventDefault();
 
 		// we need to go and fetch weather data
+		// console.log(this.props);
 		this.props.fetchWeather(this.state.term);
 		this.setState({
 			term: ''
@@ -66,6 +67,11 @@ class SearchBar extends Component {
 	}
 }
 
+
+/*
+Hooking ActionCreator's fetchWeather with SEARCH_BAR, basically providing the output to 
+SEARCH_BAR as props from ACTION.
+*/
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators({fetchWeather}, dispatch);
 }
